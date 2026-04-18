@@ -1,0 +1,85 @@
+:root {
+  --background: #ffffff;
+  --text: #0f172a;        /* Slate 900 */
+  --text-muted: #475569;  /* Slate 600 - more contrast than before */
+  --primary: #000000;     /* Pitch Black for architectural feel */
+  --primary-accent: #2563eb; /* Sharp Blue for interaction */
+  --primary-soft: rgba(0, 0, 0, 0.04);
+  --secondary: #000000;   /* Slate 900 - used for headings */
+  --accent: #3b82f6;      /* Blue 500 */
+  --border: #000000;      /* Sharp Black borders */
+  --border-muted: #e2e8f0; /* Subtle gray for structure */
+  --card-bg: #ffffff;
+  --card-shadow: 0 0 0 1px var(--border-muted);
+  --card-shadow-hover: 0 0 0 1px var(--border);
+  --radius: 0px;          /* Perfectly sharp */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+a:hover {
+  color: var(--primary-accent);
+}
+
+.container {
+  max-width: 1000px; /* Slightly wider for architectural feel */
+  margin-inline: auto;
+  padding: 0 2.5rem;
+}
+
+section {
+  margin-top: 8rem;
+  padding: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+section:first-of-type {
+  margin-top: 0;
+  padding-top: 6rem;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.glass {
+  background: #ffffff;
+  border: 1px solid var(--border-muted);
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s forwards;
+}

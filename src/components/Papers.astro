@@ -1,0 +1,142 @@
+---
+const papers = [
+    {
+        title: "AttentiveLearn: Personalized Post-Lecture Support for Gaze-Aware Immersive Learning",
+        authors: "Shi Liu, Martin Feick, Linus Bierhoff, Alexander Maedche",
+        venue: "CHI 2026",
+        year: "2026",
+        link: "https://doi.org/10.1145/3772318.3790667",
+        abstract:
+            "Immersive learning environments such as virtual classrooms in Virtual Reality (VR) offer learners unique learning experiences, yet providing effective learner support remains a challenge. While prior HCI research has explored in-lecture support for immersive learning, little research has been conducted to provide post-lecture support, despite being critical for sustained motivation, engagement, and learning outcomes. To address this, we present AttentiveLearn, a learning ecosystem that generates personalized quizzes on a mobile learning assistant based on learners' attention distribution inferred using eye-tracking in VR lectures. We evaluated the system in a four-week field study with 36 university students attending lectures on Bayesian data analysis. AttentiveLearn improved learners' reported motivation and engagement, without conclusive evidence of learning gains. Meanwhile, anecdotal evidence suggested improvements in attention for certain participants over time. Based on our findings of the field study, we provide empirical insights and design implications for personalized post-lecture support for immersive learning systems.",
+    },
+];
+---
+
+<section id="papers" class="container">
+    <div class="header">
+        <h2>Papers</h2>
+        <div class="line"></div>
+    </div>
+
+    <div class="stack">
+        {
+            papers.map((paper) => (
+                <div class="paper-entry glass">
+                    <div class="paper-meta">
+                        <span class="venue">{paper.venue}</span>
+                        <span class="dot">&bull;</span>
+                        <span class="year">{paper.year}</span>
+                    </div>
+                    <h3>{paper.title}</h3>
+                    <p class="authors">{paper.authors}</p>
+                    <p class="abstract">{paper.abstract}</p>
+                    <a href={paper.link} class="paper-link">
+                        View Publication &rarr;
+                    </a>
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+<style>
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 2.25rem;
+        font-weight: 800;
+        color: var(--secondary);
+        letter-spacing: -0.04em;
+        text-transform: uppercase;
+    }
+
+    .line {
+        height: 1px;
+        background: var(--border);
+        flex-grow: 1;
+    }
+
+    .stack {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .paper-entry {
+        padding: 3rem;
+        border-radius: var(--radius);
+        background: #ffffff;
+        border: 1px solid var(--border-muted);
+        box-shadow: none;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .paper-entry:hover {
+        border-color: var(--primary);
+        transform: translate(-4px, -4px);
+        box-shadow: 4px 4px 0 0 var(--primary);
+    }
+
+    .paper-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-family: "JetBrains Mono", monospace;
+    }
+
+    .venue {
+        color: var(--primary-accent);
+    }
+
+    .dot {
+        color: var(--border-muted);
+    }
+
+    .year {
+        color: var(--text-muted);
+    }
+
+    h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+        color: var(--text);
+        letter-spacing: -0.03em;
+    }
+
+    .authors {
+        font-size: 1.1rem;
+        color: var(--text);
+        margin-bottom: 2rem;
+        font-weight: 600;
+        font-family: "Plus Jakarta Sans", sans-serif;
+    }
+
+    .abstract {
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+        font-size: 1.05rem;
+    }
+
+    .paper-link {
+        font-weight: 800;
+        color: var(--primary-accent);
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+</style>

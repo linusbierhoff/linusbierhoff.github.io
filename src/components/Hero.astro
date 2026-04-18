@@ -1,0 +1,175 @@
+---
+
+---
+
+<section id="hero" class="container visible">
+    <div class="hero-wrapper">
+        <div class="hero-layout">
+            <div class="hero-content animate-fade-in">
+                <h1>Linus Bierhoff</h1>
+                <p class="bio">
+                    Information Systems student at <span class="highlight"
+                        >KIT</span
+                    > (Master's), junior researcher at <span class="highlight"
+                        >h-lab KIT</span
+                    >. Checkout my projects below, or get in touch!
+                </p>
+            </div>
+            <div class="hero-image animate-fade-in">
+                <img src="/me.png" alt="Linus Bierhoff" />
+            </div>
+        </div>
+        <div class="cta-group animate-fade-in">
+            <a href="#projects" class="btn primary">See my projects</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<style>
+    #hero {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 6rem;
+    }
+
+    .hero-layout {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 4rem;
+        width: 100%;
+    }
+
+    .hero-content {
+        max-width: 650px;
+        flex: 1;
+    }
+
+    .hero-image {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius);
+        font-size: 0.75rem;
+        font-weight: 700;
+        color: var(--primary);
+        background: var(--primary-soft);
+        border: 1px solid var(--border);
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-family: "JetBrains Mono", monospace;
+    }
+
+    h1 {
+        font-size: clamp(3.5rem, 12vw, 5.5rem);
+        font-weight: 800;
+        line-height: 0.9;
+        margin-bottom: 3rem;
+        color: var(--secondary);
+        letter-spacing: -0.05em;
+    }
+
+    .bio {
+        font-size: 1.25rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        margin-bottom: 4rem;
+        max-width: 600px;
+    }
+
+    .highlight {
+        color: var(--text);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+    }
+
+    .cta-group {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .btn {
+        padding: 1.1rem 2.5rem;
+        border-radius: var(--radius);
+        font-weight: 700;
+        font-size: 1rem;
+        transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .btn.primary {
+        background: var(--primary);
+        color: white;
+        border: 1px solid var(--primary);
+    }
+
+    .btn.primary:hover {
+        background: var(--primary-accent);
+        border-color: var(--primary-accent);
+        transform: translateY(-2px);
+    }
+
+    .btn.secondary {
+        background: #fff;
+        border: 1px solid var(--border);
+        color: var(--text);
+    }
+
+    .btn.secondary:hover {
+        background: var(--primary-soft);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 968px) {
+        .hero-layout {
+            flex-direction: column-reverse;
+            text-align: center;
+            gap: 2rem;
+            padding-top: 2rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bio {
+            text-align: center;
+        }
+
+        .hero-image img {
+            max-width: 250px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .cta-group {
+            flex-direction: column;
+            width: 100%;
+        }
+    }
+</style>

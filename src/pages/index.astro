@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import Papers from '../components/Papers.astro';
+import Socials from '../components/Socials.astro';
+---
+
+<Layout title="Linus Bierhoff | Personal Website">
+	<main>
+		<Hero />
+		<Projects />
+		<Papers />
+		<Socials />
+	</main>
+</Layout>
+
+<style>
+	main {
+		width: 100%;
+		/* overflow-x: hidden; */
+	}
+</style>

@@ -1,0 +1,67 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="copyright">
+        &copy; {year} LINUS BIERHOFF
+      </div>
+      <nav class="footer-nav">
+        <a href="/legal">LEGAL NOTICES</a>
+        <a href="/privacy">PRIVACY POLICY</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    margin-top: 8rem;
+    padding: 4rem 0 6rem;
+    border-top: 1px solid var(--border-muted);
+  }
+
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .copyright {
+    color: #94a3b8; /* Matching the color found in Socials.astro CSS */
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  .footer-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .footer-nav a:hover {
+    color: var(--primary-accent);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 640px) {
+    .footer-content {
+      flex-direction: column;
+      gap: 2rem;
+      text-align: center;
+    }
+    
+    .footer-nav {
+      gap: 1.5rem;
+    }
+  }
+</style>
